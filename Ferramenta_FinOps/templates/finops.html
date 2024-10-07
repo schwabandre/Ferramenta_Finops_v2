@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramenta FinOps</title>
+    <link rel="stylesheet" href="C:\Users\andre.schwab\OneDrive - Solo Network Brasil S.A\Área de Trabalho\Projetos\Ferramenta_FinOps\static\css\styles.css">
+    <!-- Bootstrap CSS para estilização -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Cabeçalho com logo e navegação -->
+    <header class="bg-danger p-3">
+        <div class="container-fluid">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-6">
+                    <h1 class="text-white">FinOps</h1>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav justify-content-center">
+            <a class="nav-link text-white" href="#">Segurança</a>
+            <a class="nav-link text-white" href="#">Usuário</a>
+            <a class="nav-link text-white" href="#">Coisa</a>
+        </nav>
+    </header>
+
+    <!-- Seção de Formulário -->
+    <section class="container my-4">
+        <h2>Dados</h2>
+        <form>
+            <div class="form-group mb-3">
+                <label for="nome">Nome do Cliente:</label>
+                <input type="text" id="nome" name="nome" class="form-control" required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="quantidade">Quantidade de Recomendação:</label>
+                <input type="number" id="quantidade" class="form-control" min="1" value="1">
+                <button id="createInputs" type="button" class="btn btn-primary mt-2">Criar Inputs</button>
+            </div>
+
+            <!-- Div para adicionar os inputs dinamicamente -->
+            <div id="valorRecoContainer" class="mb-3"></div>
+
+            <div class="form-group mb-3">
+                <label for="consumo">Consumo mês anterior:</label>
+                <input type="number" id="consumo" name="consumo" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Seção da Tabela -->
+    <section class="container my-4">
+        <h2>Tabela</h2>
+        <div class="table-responsive">
+            <table id="tabela-dados" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Porcentagem de diminuição</th>
+                        <th>Valor Recomendação</th>
+                        <th>Consumo mês Anterior</th>
+                        <th>Severidade</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <script src="C:\Users\andre.schwab\OneDrive - Solo Network Brasil S.A\Área de Trabalho\Projetos\Ferramenta_FinOps\static\js\script.js"></script>
+    
+    
+    <!-- Script JS para interatividade -->
+    <script>
+        document.getElementById("createInputs").addEventListener("click", function() {
+            var quantidade = parseInt(document.getElementById("quantidade").value);
+            var valorRecoContainer = document.getElementById("valorRecoContainer");
+
+            valorRecoContainer.innerHTML = ''; // Limpa o conteúdo anterior
+
+            for (var i = 0; i < quantidade; i++) {
+                // Cria campos de entrada para valores de recomendação dinamicamente
+                var valorRecoInput = document.createElement("input");
+                valorRecoInput.type = "number";
+                valorRecoInput.className = "form-control mb-2";
+                valorRecoInput.placeholder = "Valor Recomendação " + (i + 1);
+                valorRecoContainer.appendChild(valorRecoInput);
+            }
+        });
+    </script>
+
+
+</body>
+</html>

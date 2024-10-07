@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de {{ nome_usuario }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <header class="bg-primary p-3">
+        <h1 class="text-white">Perfil de {{ nome_usuario }}</h1>
+    </header>
+
+    <section class="container my-4">
+        <h2>Informações do Usuário</h2>
+        <p>Bem-vindo, {{ nome_usuario }}! Aqui estão suas informações.</p>
+        <!-- Conteúdo adicional será adicionado aqui -->
+    </section>
+
+</body>
+</html>

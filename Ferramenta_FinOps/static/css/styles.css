@@ -1,0 +1,64 @@
+/* =====================================
+   Estilo global
+   ===================================== */
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* =====================================
+   Estilo do título (h1)
+   ===================================== */
+header {
+  padding: 10px 20px; /*reduz padding*/
+  background-color: #dc3545; /*cor de fundo*/
+}
+
+header h1{
+  font-size: 1.8rem; /*Diminui o tamanho da fonte do Título*/
+  margin: 0;
+}
+
+.nav-link{
+  font-size: 1rem; /*Reduz o tamanho da fonte dos links*/
+  padding: 5px 10px; /*Reduz o padding dos links */
+}
+
+/* =====================================
+   Estilo do botão de boas-vindas
+   ===================================== */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Feedback visual de erro */
+.is-invalid {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+  }
+  
+  /* Estilos da Tabela por Severidade */
+  table tr.alta {
+    background-color: #f8d7da;
+  }
+  
+  table tr.media {
+    background-color: #ffe798;
+  }
+  
+  table tr.baixa {
+    background-color: #d4edda;
+  }
